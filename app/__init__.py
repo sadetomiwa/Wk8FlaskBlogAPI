@@ -5,9 +5,12 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+CORS(app)
 
 # Create an instance of SQLAlchemy to connect our app to the database
 db = SQLAlchemy(app)
